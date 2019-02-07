@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>cool color maker</title>
+</head>
+<body id="gradient">
+<h1>Background Generator</h1>
+<input class="color1" type="color" name="color1" value="#00ff00">
+<input class="color2" type="color" name="color2" value="#ff0000">
+<h2 id="cssbackground">CSS Background</h2>
+
+<style type="text/css">
+	body{
+		font:'Raleway', sans-serif;
+		color:rgba(0,0,0,.5);
+		text-align: center;
+		text-transform: uppercase;
+		letter-spacing: .5em;
+		top: 15%;
+		background: linear-gradient(to right, red, yellow);
+	}
+	h1{
+		font:600 3.5em 'Raleway', sans-serif;
+		color:rgba(0,0,0,.5);
+		text-align: center;
+		text-transform: uppercase;
+		letter-spacing: .5em;
+		width:100%;
+
+	}
+	h2{
+		font:900 1em 'Raleway' sans-serif;
+		color:rgba(0,0,0,.5);
+		text-align: center;
+		text-transform: none;
+		letter-spacing:0.01em;
+
+	}
+</style>
+<script type="text/javascript">
+	var css= document.querySelector("h3");
+	var color1 = document.querySelector(".color1");
+	var color2 =document.querySelector(".color2");
+	var body= document.getElementById("gradient");
+	// body.style.background="red";
+	function setgradient(){
+		body.style.background ="linear-gradient(to right," +color1.value+","+color2.value + ")";
+		//just like inner
+		cssbackground.textContent = body.style.background + ";";
+	}
+	color1.addEventListener("input", setgradient);
+	color2.addEventListener("input", setgradient);
+</script>
+</body>
+</html>
